@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- Start the publisher node -->
+  <node pkg="my_pkg" type="Publisher.py" name="talker" output="screen"/>
+
+  <!-- Start the subscriber node -->
+  <node pkg="my_pkg" type="Subscriber.py" name="listener" output="screen"/>
+
+</launch>
