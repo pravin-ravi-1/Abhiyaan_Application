@@ -1,0 +1,23 @@
+Following modules were used in the solutiuons:
+  --> OpenCV - Module that contains functions with real-time computer vision capabilities.
+  --> NumPy - Module that contains functions to perform certain complex math functions.
+  
+Single Pedestrian:
+  1. A tracking ball of radius 40 was created to follow around the target ball.
+  2. The position of tracking ball was constantly updated to track the target ball.
+  3. Once every hundred frame collections, direction, velocity and acceleration were updated.
+  4. Constant updation for each frame would make it difficult to track actual velocity in real-time.
+  5. Given the ball's constant flickering, error-prone velocity, acceleration were avoided.
+  
+  Note:
+  Direction is in the form of x i + y j
+    where, i and j are unit vectors along x and y axes respectively.
+    
+Multiple Pedestrians:
+  1. Multiple tracking balls were created to track the motion of individual balls,
+  2. Whenever a ball was detected, a pink circle was formed around it.
+  3. Just like previous problem, required parameters were computed.
+  
+  However, tracking wasn't as efficient due to following reasons:
+    1. Multiple balls of different sizes
+    2. One tracking ball wasn't able to stay consistent with one ball due to constant overlapping.
