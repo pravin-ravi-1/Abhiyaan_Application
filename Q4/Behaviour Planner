@@ -1,0 +1,170 @@
+    # Behaviour Planner
+
+    def move(self):
+        
+        # Right
+        if self.direction == "right":
+
+            if self.x >= 150 and self.x <= 290:
+
+                # Stopping at red light
+                if red_signal[0] == 1:
+                    self.speed = 0
+        
+                # Slow at yellow light
+                elif yellow_signal[0] == 1:
+                    self.speed = self.ogspeed/2
+                
+                else:
+                    self.speed = self.ogspeed
+
+            # Roundabout
+            if self.x >= 290 and self.y <= 270 and self.x <= 410:
+                if self.angle < 20:
+                    self.image = pygame.transform.rotate(self.image, 20)
+                    self.angle += 20
+                elif self.x <= 410:
+                    self.x += self.speed*0.93
+                    self.y -= self.speed*0.34
+            
+            elif self.x >= 410 and self.x <= 510:
+                if self.angle < 60:
+                    self.image = pygame.transform.rotate(self.image, 20)
+                    self.angle += 40
+                elif self.x <= 510:
+                    self.x += self.speed*0.77
+                    self.y -= self.speed*0.64
+            
+            elif self.x >= 510:
+                if self.angle < 90:
+                    self.image = pygame.transform.rotate(self.image, 50)
+                    self.angle += 30
+                elif self.x <= 545:
+                    self.y -= self.speed
+                
+            # Move
+            else:
+                self.x += self.speed
+        
+        # Left
+        if self.direction == "left":
+
+            if self.x <= 1080 and self.x >= 940:
+
+                # Stopping at red light
+                if red_signal[2] == 1:
+                    self.speed = 0
+        
+                # Slow at yellow light
+                elif yellow_signal[2] == 1:
+                    self.speed = self.ogspeed/2
+                
+                else:
+                    self.speed = self.ogspeed
+
+            # Roundabout
+            if self.x <= 940 and self.x >= 820:
+                if self.angle < 20:
+                    self.image = pygame.transform.rotate(self.image, 20)
+                    self.angle += 20
+                elif self.x >= 820:
+                    self.x -= self.speed*0.93
+                    self.y += self.speed*0.34
+            
+            elif self.x <= 820 and self.x >= 700:
+                if self.angle < 60:
+                    self.image = pygame.transform.rotate(self.image, 20)
+                    self.angle += 40
+                elif self.x >= 700:
+                    self.x -= self.speed*0.77
+                    self.y += self.speed*0.64
+            
+            elif self.x <= 700:
+                if self.angle < 90:
+                    self.image = pygame.transform.rotate(self.image, 50)
+                    self.angle += 30
+                elif self.x <= 720:
+                    self.y += self.speed
+                
+            # Move
+            else:
+                self.x -= self.speed
+
+        # Up
+        if self.direction == "up":
+            
+            if self.y <= 690 and self.y >= 680:
+
+                # Stopping at red light
+                if red_signal[3] == 1:
+                    self.speed = 0
+        
+                # Slow at yellow light
+                elif yellow_signal[3] == 1:
+                    self.speed = self.ogspeed/2
+                
+                else:
+                    self.speed = self.ogspeed
+
+            # Roundabout
+            if self.y <= 690 and self.y >= 570:
+                if self.angle < 20:
+                    self.image = pygame.transform.rotate(self.image, 20)
+                    self.angle += 20
+                elif self.y >= 570:
+                    self.y -= self.speed*0.93
+                    self.x -= self.speed*0.34
+            
+            elif self.y >= 400 and self.y <= 570:
+                if self.angle < 60:
+                    self.image = pygame.transform.rotate(self.image, 20)
+                    self.angle += 40
+                elif self.y >= 400:
+                    self.y -= self.speed*0.77
+                    self.x -= self.speed*0.64
+            
+            elif self.y <= 400:
+                if self.angle < 90:
+                    self.image = pygame.transform.rotate(self.image, 50)
+                    self.angle += 30
+                elif self.y >= 365:
+                    self.x -= self.speed
+                
+            # Move
+            else:
+                self.y -= self.speed
+
+        # Down
+        if self.direction == "down":
+            
+            if self.y >= 0:
+
+                if red_signal[1] == 1:
+                    self.speed = 0
+        
+                # Slow at yellow light
+                elif yellow_signal[1] == 1:
+                    self.speed = self.ogspeed/2
+                
+                else:
+                    self.speed = self.ogspeed
+
+            # Roundabout
+            if self.y >= 100 and self.y <= 240:
+                if self.angle < 45:
+                    self.image = pygame.transform.rotate(self.image, 45)
+                    self.angle += 45
+                elif self.y <= 240:
+                    self.y += self.speed*0.71
+                    self.x += self.speed*0.71
+            
+            elif self.y >= 240:
+                if self.angle < 90:
+                    self.image = pygame.transform.rotate(self.image, 45)
+                    self.angle += 45
+                elif self.y <= 425:
+                    self.x += self.speed
+                
+            # Move
+            else:
+                self.y += self.speed
