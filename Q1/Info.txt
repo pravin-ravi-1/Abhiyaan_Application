@@ -1,0 +1,6 @@
+Ubuntu 20.04 was setup by dual booting my Windows machine with a bootable flash drive.
+Following tutorial was used:
+  https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
+  
+ROS Noetic was setup by using the following tutorial:
+  https://wiki.ros.org/noetic/Installation/Ubuntu
