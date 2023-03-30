@@ -1,0 +1,14 @@
+Went through beginner level and some intermediate level tutorials in: http://wiki.ros.org/ROS/Tutorials
+Also referred the youtube video: https://www.youtube.com/watch?v=4aUp2703FFY
+
+Subtask - 1:
+  1. Catkin workspace 'catkin_ws' was created.
+  2. Publisher.py was created to publish the message in the node "talker".
+  3. Subscriber.py was created to subscribe to the message that was published and print it in "listener" node.
+
+Subtask - 2:
+
+Subtask - 3:
+  1. $ rosrun turtlesim turtlesim_node -- to open the turtlesim window with 'turtle1'.
+  2. Rosservice was used to kill 'turtle1'.
+  3. 'turtle1' and 'turtle2' were spawned at (2,5) and (8,5) respectively facing eachother.
